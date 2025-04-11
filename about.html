@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Dubbudu Sai Shashank Reddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --neon-blue: #00f3ff;
+            --neon-pink: #ff00ff;
+            --text-light: #e0e0e0;
+            --text-gray: #b0b0b0;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: rgba(18, 18, 18, 0.8);
+            padding: 2rem;
+            border-bottom: 1px solid var(--neon-blue);
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+        
+        section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #333;
+        }
+
+
+        
+        .experience-item {
+            background: rgba(30, 30, 30, 0.5);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--neon-blue);
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-item:hover {
+            transform: translateX(10px);
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li:before {
+            content: "▹";
+            color: var(--neon-pink);
+            padding-right: 0.5rem;
+        }
+        
+        a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--neon-pink);
+            text-shadow: 0 0 5px var(--neon-pink);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <style>
+        .nav-link {
+            color: var(--neon-blue);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+        }
+        
+        .logo-link {
+            position: absolute;
+            left: 5.5rem;
+            top: 3.9rem;
+            width: 40px;
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .logo {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 5px #00f3ff);
+        }
+        
+        .logo-link:hover .logo {
+            filter: drop-shadow(0 0 10px #ff00ff);
+        }
+
+        .nav-link:hover {
+            color: var(--neon-pink);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            function checkVisibility() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const sectionBottom = section.getBoundingClientRect().bottom;
+                    
+                    if (sectionTop < window.innerHeight * 0.75 && sectionBottom > 0) {
+                        section.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Initial check
+        });
+    </script>
+</head>
+<body>
+    <header style="text-align: center; padding: 2rem; position: relative;">
+        <div class="header-content">
+            <div class="name-role">
+                <h1>Dubbudu Sai Shashank Reddy</h1>
+                <p>Data Analyst</p>
+            </div>
+            <a href="index.html" class="logo-link">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#00f3ff" stroke-width="5"/>
+                    <path d="M30,50 L70,50 M50,30 L50,70" stroke="#00f3ff" stroke-width="5"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+    
+    <section id="experience">
+        <h2>💼 Experience</h2>
+        <div class="experience-item">
+            <h3>Business Analyst Intern</h3>
+            <p><strong>Futurense</strong> | June 2024 – Aug 2024</p>
+            <ul>
+                <li>Worked with real-time data from their USA Pathway Program</li>
+                <li>Responsible for cleaning, transforming, and analyzing complex datasets to uncover hidden trends and improve data quality</li>
+                <li>Developed several interactive dashboards using Power BI that helped leadership monitor performance metrics</li>
+                <li>Contributed to reports and delivered a stakeholder presentation that translated technical data into strategic insights</li>
+            </ul>
+        </div>
+        
+        <div class="experience-item">
+            <h3>SQL Trainee</h3>
+            <p><strong>Futurense</strong> | June 2023 – July 2023</p>
+            <ul>
+                <li>Built and managed a complete database system for an online ticket booking platform</li>
+                <li>Implemented normalization techniques to enhance data consistency and optimized query performance</li>
+                <li>Enabled functionality for ticket reservations, cancellations, and revenue tracking through advanced SQL queries</li>
+                <li>Ensured scalability and smooth user experience through stored procedures</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="education">
+        <h2>🎓 Education</h2>
+        <div class="experience-item">
+            <h3>Lovely Professional University</h3>
+            <p>Bachelor of Technology in Computer Science and Engineering (AI & Data Engineering)</p>
+            <p>2022 – 2026 | CGPA: 7.35 | Jalandhar, Punjab</p>
+            <p>My academic journey focuses on building a solid foundation in Artificial Intelligence, Machine Learning, and Data Engineering. I'm constantly exploring how data-driven systems can solve real-world problems, and I'm excited to apply these concepts in the industry.</p>
+        </div>
+        
+        <div class="experience-item">
+            <h3>Gyanville Academy, Hyderabad</h3>
+            <p>12th Science | 2020 – 2022 | Percentage: 98.20%</p>
+            <p>Focused on Mathematics, Physics, and Computer Science, my time at Gyanville strengthened my analytical and logical thinking.</p>
+        </div>
+        
+        <div class="experience-item">
+            <h3>Alphores High School, Karimnagar</h3>
+            <p>10th Grade | 2019 – 2020 | CGPA: 10</p>
+            <p>Graduated with top scores, laying a strong academic foundation.</p>
+        </div>
+    </section>
+    <section style="padding: 2rem; display: flex; justify-content: space-between;">
+        <a href="index.html" class="nav-arrow" style="text-decoration: none;">
+             Back to Home
+        </a>
+        <a href="projects.html" class="nav-arrow" style="text-decoration: none;">
+            Continue to Projects 
+        </a>
+    </section>    
+    <section style="padding: 2rem;">
+        <div style="display: flex; justify-content: space-between;">
+            <a href="index.html" class="nav-link">Back to Home</a>
+            <a href="projects.html" class="nav-link">Continue to Projects</a>
+            <a href="skills.html" class="nav-link">Continue to Skills</a>
+        </div>
+    </section>
+    <style>
+        .nav-arrow {
+            color: var(--neon-blue);
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-arrow:hover {
+            color: var(--neon-pink);
+            text-shadow: 0 0 5px var(--neon-pink);
+        }
+
+        .nav-arrow:hover::before {
+            content: "←";
+            position: absolute;
+            left: -1rem;
+            animation: bounceLeft 0.5s infinite alternate;
+        }
+
+        .nav-arrow:hover::after {
+            content: "→";
+            position: absolute;
+            right: -1rem;
+            animation: bounceRight 0.5s infinite alternate;
+        }
+
+        @keyframes bounceLeft {
+            from { transform: translateX(0); }
+            to { transform: translateX(-5px); }
+        }
+
+        @keyframes bounceRight {
+            from { transform: translateX(0); }
+            to { transform: translateX(5px); }
+        }
+    </style>
+</body>
+</html>
